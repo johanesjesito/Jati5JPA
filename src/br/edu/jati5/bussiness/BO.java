@@ -1,5 +1,8 @@
 package br.edu.jati5.bussiness;
 
+import javax.persistence.EntityManager;
+import javax.persistence.Query;
+
 import br.edu.jati5.dao.DAO;
 import br.edu.jati5.entidade.Entidade;
 import br.edu.jati5.exceptions.BOException;
@@ -54,6 +57,13 @@ public abstract class BO <T extends Entidade>{
 
 	DAO<T> getDaoT() {
 		return daoT;
+	}
+	
+	public T getConsultaHQL(String sql){
+		
+		T t = null;
+		t = daoT.getConsultaHQL(sql, classe);
+		return t;
 	}
 	
 	public void validarinsercao(){}

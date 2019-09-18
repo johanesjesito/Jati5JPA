@@ -4,6 +4,8 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.NoResultException;
 import javax.persistence.Persistence;
+import javax.persistence.Query;
+import javax.persistence.TypedQuery;
 
 import br.edu.jati5.entidade.Entidade;
 import br.edu.jati5.exceptions.DAOException;
@@ -110,5 +112,14 @@ public abstract class DAO <T extends Entidade> {
 			entityManager.close();
 		}
 		return t;	
+	}
+	
+	public T getConsultaHQL(String sql, Class<T> classe){
+		
+		EntityManager entityManager = createEntityManager();
+		T t = null;
+		Query query = entityManager.createNativeQuery(sql, classe);
+		t = (T) query.getSingleResult();
+		return t;
 	}
 }

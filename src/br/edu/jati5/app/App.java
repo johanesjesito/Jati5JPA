@@ -12,23 +12,15 @@ import br.edu.jati5.view.Janela;
 
 public class App {
 
-	public static void main(String[] args) 
+	public static void main(String[] args) throws DAOException 
 	{
 		
 		
-		try {
-			Usuario u = new Usuario();
-			u.setNome("ADMIN");
-			u.setLogin("admin");
-			u.setSenha("admin123");
-
-			Facade.getInstance().inserir(u);
-			
-			System.out.println(u.getId());
-		} catch (DAOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		Usuario u = null;
+		
+		Facade.getInstance().getBoUsuario().getConsultaHQL("select u from Usuario u where u.ativado = true and u.login = 'admin2'");
+		
+		System.out.println(u.getId());
 		
 		/*
 		try 
