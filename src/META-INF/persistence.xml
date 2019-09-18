@@ -8,6 +8,11 @@
     	<!-- 
     	Classes são descritas desta maneira,
     	<class>pacote.Classe</class> -->
+    	
+    	<class>entidade.Usuario</class>
+    	<class>entidade.Pesquisa</class>
+    	<class>entidade.Dado</class>
+    	<class>entidade.EstruturaPesquisa</class>
      	
         <properties>
             <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver" /> <!-- DB Driver -->
