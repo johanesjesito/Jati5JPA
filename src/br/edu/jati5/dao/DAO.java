@@ -120,6 +120,7 @@ public abstract class DAO <T extends Entidade> {
 		T t = null;
 		Query query = entityManager.createNativeQuery(sql, classe);
 		t = (T) query.getSingleResult();
+		entityManager.close();
 		return t;
 	}
 }
