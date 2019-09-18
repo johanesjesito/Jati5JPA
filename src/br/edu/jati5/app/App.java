@@ -5,6 +5,8 @@ import javax.swing.UnsupportedLookAndFeelException;
 import javax.swing.plaf.nimbus.NimbusLookAndFeel;
 
 import br.edu.jati5.controll.Controlador;
+import br.edu.jati5.entidade.Usuario;
+import br.edu.jati5.exceptions.DAOException;
 import br.edu.jati5.fachada.Facade;
 import br.edu.jati5.view.Janela;
 
@@ -14,11 +16,19 @@ public class App {
 	{
 		
 		
-		
-		
-		
-		
-		
+		try {
+			Usuario u = new Usuario();
+			u.setNome("ADMIN");
+			u.setLogin("admin");
+			u.setSenha("admin123");
+
+			Facade.getInstance().inserir(u);
+			
+			System.out.println(u.getId());
+		} catch (DAOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 		/*
 		try 
