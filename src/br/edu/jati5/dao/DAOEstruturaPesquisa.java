@@ -1,5 +1,7 @@
 package br.edu.jati5.dao;
 
-public class DAOEstruturaPesquisa {
+import br.edu.jati5.entidade.EstruturaPesquisa;
+
+public class DAOEstruturaPesquisa extends DAO<EstruturaPesquisa> {
 
 }

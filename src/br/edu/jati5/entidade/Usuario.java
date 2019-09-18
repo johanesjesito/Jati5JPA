@@ -10,7 +10,7 @@ import javax.persistence.Transient;
 
 @Entity
 @Table(name = "usuario")
-public class Usuario {
+public class Usuario extends Entidade{
 
 	@Column(nullable = false)
 	private String nome;

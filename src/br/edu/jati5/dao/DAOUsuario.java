@@ -1,6 +1,7 @@
 package br.edu.jati5.dao;
 
-public class DAOUsuario {
+import br.edu.jati5.entidade.Usuario;
 
+public class DAOUsuario extends DAO<Usuario>{
 	
 }
